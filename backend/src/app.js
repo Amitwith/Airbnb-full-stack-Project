@@ -1,0 +1,19 @@
+const express = require("express");
+const authRouter = require("./routes/auth.route");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const userRouter = require("./routes/user.router");
+
+const app = express();
+app.use(express.json());
+app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  }),
+);
+app.use("/api/auth", authRouter);
+app.user("/api/user", userRouter);
+
+module.exports = app;
