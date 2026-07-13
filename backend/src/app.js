@@ -14,6 +14,6 @@ app.use(
   }),
 );
 app.use("/api/auth", authRouter);
-app.user("/api/user", userRouter);
+app.use("/api/user", userRouter);
 
 module.exports = app;
